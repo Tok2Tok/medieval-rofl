@@ -4,5 +4,7 @@ public enum PlayerState
     Idle = 1,
     Move = 2,
     Attack = 3,
-    Block = 4
+    Block = 4,
+    Blocking = 5,
+    Unblock = 6 
 } 

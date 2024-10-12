@@ -4,7 +4,7 @@ public class PlayerCamera : MonoBehaviour
 {
     [SerializeField] private float _sens = 200f;
  
-    private float _xRotate;
+    private float _xRotate = 0;
 
     private void Start() 
     {
@@ -17,8 +17,8 @@ public class PlayerCamera : MonoBehaviour
         transform.Rotate(Vector3.up * mousePosition.x * Time.deltaTime * _sens);
         _xRotate -= mousePosition.y * Time.deltaTime * _sens;
         _xRotate = Mathf.Clamp(_xRotate, -80f, 80f);
-        Quaternion fpsRigRotation = Quaternion.Euler(_xRotate, 0, 0);
-        Camera.main.transform.localRotation = fpsRigRotation;
+        Quaternion cameraRotation = Quaternion.Euler(_xRotate, 0, 0);
+        Camera.main.transform.localRotation = cameraRotation;
     }    
 
     private void Update()
